@@ -13,7 +13,7 @@ function startGame(){
   startButton.classList.add('hide');
   shuffleQuestions = questions.sort(()=> Math.random()- .5)
   currentQuestion = 0;
-//   questionContainerElement.classList.remove('hide');
+  questionContainerElement.classList.remove('hide');
   setNextQuestion();
 }
 
