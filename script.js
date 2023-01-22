@@ -8,11 +8,16 @@ let shuffleQuestions, currentQuestion;
 console.log(startButton);
 
 startButton.addEventListener('click',startGame);
+nextButton.addEventListener('click',()=>{
+    currentQuestion++;
+    setNextQuestion();
+})
 
 function startGame(){
   console.log('Started');
   startButton.classList.add('hide');
   shuffleQuestions = questions.sort(()=> Math.random()- .5)
+  console.log(questions.sort(()=> Math.random()- .5))
   currentQuestion = 0;
   questionContainerElement.classList.remove('hide');
   setNextQuestion();
@@ -40,6 +45,7 @@ function showQuestion(question){
 }
 
 function resetState(){
+    clearStatusClass(document.body);
     nextButton.classList.add('hide');
     while (answerButtonElemnet.firstChild){
         answerButtonElemnet.removeChild(answerButtonElemnet.firstChild);
@@ -54,7 +60,16 @@ function selectAnswer(e){
     Array.from(answerButtonElemnet.children).forEach(button =>{
         setStatusClass(button, button.dataset.correct);
     })
-    nextButton.classList.remove('hide');
+    console.log(shuffleQuestions.length);
+    console.log(currentQuestion+1);
+    if(shuffleQuestions.length > currentQuestion+1){
+        nextButton.classList.remove('hide')
+    }
+    else{
+        startButton.innerText='Restart';
+        startButton.classList.remove('hide');
+    }
+
     
 }
 
@@ -79,7 +94,28 @@ const questions = [
         answers : [
             {text : '4' , correct:true },
             {text : '22' , correct:false },
+            {text : '6' , correct:false },
+            {text : '0' , correct:false },
+
+        ],
+
+        question: 'what is 2 * 2',
+        answers : [
+            {text : '1' , correct:false },
+            {text : '44' , correct:false },
+            {text : '6' , correct:false },
+            {text : '4' , correct:true },
+
+        ],
+
+        question: 'what is 5*5',
+        answers : [
+            {text : '3' , correct:false },
+            {text : '50' , correct:false },
+            {text : '10' , correct:false },
+            {text : '25' , correct:true },
 
         ]
+
     }
 ]
