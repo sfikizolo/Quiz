@@ -16,8 +16,8 @@ nextButton.addEventListener('click',()=>{
 function startGame(){
   console.log('Started');
   startButton.classList.add('hide');
+  console.log(questions)
   shuffleQuestions = questions.sort(()=> Math.random()- .5)
-  console.log(questions.sort(()=> Math.random()- .5))
   currentQuestion = 0;
   questionContainerElement.classList.remove('hide');
   setNextQuestion();
@@ -88,32 +88,95 @@ function clearStatusClass(element){
 
 }
 
-const questions = [
+const questions =[
     {
-        question: 'what is 2 + 2',
+        question: 'who is the first computer programmer',
         answers : [
-            {text : '4' , correct:true },
-            {text : '22' , correct:false },
-            {text : '6' , correct:false },
-            {text : '0' , correct:false },
+            {text : 'Ada Lovelace' , correct:true },
+            {text : 'Donald Knuth' , correct:false },
+            {text : 'Charles Babbage' , correct:false },
+            {text : 'Dennis Ritchie' , correct:false },
 
-        ],
+        ]
+    },
 
-        question: 'what is 2 * 2',
+    {
+        question: 'When was the first computer invented',
         answers : [
-            {text : '1' , correct:false },
-            {text : '44' , correct:false },
-            {text : '6' , correct:false },
-            {text : '4' , correct:true },
+            {text : '1820' , correct:false },
+            {text : '1850' , correct:false },
+            {text : '1992' , correct:false },
+            {text : '1822' , correct:true },
 
-        ],
+        ]
+    },
 
-        question: 'what is 5*5',
+    {
+        question: 'Sound travels about 4 times faster in water than in air.',
         answers : [
-            {text : '3' , correct:false },
-            {text : '50' , correct:false },
-            {text : '10' , correct:false },
-            {text : '25' , correct:true },
+            {text : 'True' , correct:true},
+            {text : 'False' , correct:false },
+
+        ]
+    },
+
+    {
+        question: 'How many programming languages are there ',
+        answers : [
+            {text : 'approximately 3' , correct:false },
+            {text : 'approximately 300' , correct:false },
+            {text : 'approximately 700' , correct:true },
+            {text : 'approximately 10' , correct:false },
+
+        ]
+    },
+
+
+    {
+        question: 'The first computer virus was created in.......',
+        answers : [
+            {text : '1986' , correct:true },
+            {text : '2000' , correct:false },
+            {text : '1912' , correct:false },
+            {text : '1892' , correct:false },
+
+        ]
+    },
+
+
+    {
+        question: 'What was the first programming language called',
+        answers : [
+            {text : 'C++' , correct:false },
+            {text : 'Assembly language' , correct:false },
+            {text : 'FORTRAN' , correct:true },
+            {text : 'PYTHON' , correct:false },
+
+        ]
+    },
+
+
+
+    {
+        question: 'Go is a programming language that was designed at Google in 2007 to enhance coding productivity in the time of multicore',
+        answers : [
+            {text : 'true' , correct:true },
+            {text : 'false' , correct:false },
+            {text : 'I do not know' , correct:false },
+            {text : 'maybe' , correct:false },
+
+        ]
+    },
+
+
+    {
+
+        question: 'who is the father of computer science',
+        answers : [
+            {text : 'Grace Hopper' , correct:false },
+            {text : 'Alan Turing' , correct:true },
+            {text : 'Steve jobs' , correct:false },
+            {text : 'Charles Babbage' , correct:false },
 
         ]
 
